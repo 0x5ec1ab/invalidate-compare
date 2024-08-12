@@ -113,5 +113,9 @@ main(int argc, char *argv[])
 
   printf("SM X: 1st value %lx\n", host[0]);
   printf("SM X: 2nd value %lx\n", host[1]);
+  
+  free(host);
+  cudaFree(vals);
+  cudaFree(data);
 }
 

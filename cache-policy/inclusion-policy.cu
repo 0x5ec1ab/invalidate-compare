@@ -116,5 +116,9 @@ main(int argc, char *argv[])
 
   printf("SM X: old value %lx \t new value %lx\n", host[0], host[1]);
   printf("SM Y: old value %lx \t new value %lx\n", host[2], host[3]);
+  
+  free(host);
+  cudaFree(vals);
+  cudaFree(data);
 }
 

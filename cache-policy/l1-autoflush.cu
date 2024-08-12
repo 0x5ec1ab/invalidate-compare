@@ -128,5 +128,9 @@ main(int argc, char *argv[])
   cudaDeviceSynchronize();
   
   printf("SM Y: value %lx\n", host[1]);
+  
+  free(host);
+  cudaFree(vals);
+  cudaFree(data);
 }
 
