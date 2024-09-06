@@ -5,6 +5,11 @@ These experiments are performed on **Ubuntu 20.04** with NVIDIA driver version 5
 First, *to reduce interference during experiments, we use the integrated GPU for display*.
 Therefore, we set the BIOS to use the CPU-integrated GPU instead of the discrete one.
 When you use `nvidia-smi`, you should see that **no processes are using the discrete GPU**. 
+If you still see `/usr/lib/xorg/Xorg` and/or `/usr/bin/gnome-shell`, try adding a blacklist file to blacklist the `nvidia_drm` module. 
+
+```
+blacklist nvidia_drm
+```
 
 ---
 
