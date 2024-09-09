@@ -109,7 +109,7 @@ main(int argc, char *argv[])
     
     int64_t mid = 0;
     int64_t lower = START_POS;
-    int64_t upper = blk_num - 1;
+    int64_t upper = START_POS + blk_num - 1;
     
     std::cout << "==================== target: " << target << std::endl;
     while (upper >= lower) {
