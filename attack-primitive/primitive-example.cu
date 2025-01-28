@@ -21,7 +21,7 @@ monitor(uint64_t *meta)
   uint64_t st_addr;
   uint64_t ld_addr;
   uint64_t val = 10;
-  uint64_t res[7];
+  uint64_t res[EV_SET_ST];
   
   uint8_t no;
   uint8_t *space;
@@ -126,7 +126,7 @@ monitor(uint64_t *meta)
     asm volatile("ld.u64.cg %0, [stAddr5+8];" : "=l" (res[5]));
     asm volatile("ld.u64.cg %0, [stAddr6+8];" : "=l" (res[6]));
     
-    for (no = 0; no < 7; ++no) {
+    for (no = 0; no < EV_SET_ST; ++no) {
       // compare (if not equal, the set is not accessed)
       if (res[no] != val)
         break;
